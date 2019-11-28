@@ -23,4 +23,14 @@ public class ArticleServiceImpl implements IArticleService {
         article.setPublishDate(new Date());
        articleDao.save(article);
     }
+
+    @Override
+    public void deleteById(int id) throws CustomerException {
+        articleDao.deleteById(id);
+    }
+
+    @Override
+    public Article findById(int id) throws CustomerException {
+       return articleDao.queryById(id);
+    }
 }
